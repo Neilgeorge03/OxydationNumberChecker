@@ -47,16 +47,17 @@ def PolyAtomicIons(Formula): #detect and remove polyatomic ions contained in the
 def ChargeChecker(equation1, charge1):
     for ncharge in range(1,10):
         if str(ncharge)+"+" in equation1:
-            charge1 = str(ncharge)+"+"
-            equation1 = equation1.replace(charge1, "")
+            charge = str(ncharge)+"+"
+            charge1 = str(int(charge[::-1]) + int(charge1[::-1]))[::-1]+"+"
+            equation1 = equation1.replace(charge, "")
         elif str(ncharge)+"-" in equation1:
-            charge1 = str(ncharge)+"-"
-            equation1 = equation1.replace(charge1, "")
+            charge = str(ncharge)+"-"
+            charge1 = str(int(charge[::-1]) + int(charge1[::-1]))[::-1]
+            equation1 = equation1.replace(charge, "")
     if str(IonicBonds(equation1, charge1)) == "None":
         return equation1+"^"+charge1
     else:
         return IonicBonds(equation1, charge1) 
-    return IonicBonds(equation1, charge1)
 
 
 def IonicBonds(equation, charge): #seperates regular ones ionic equations
