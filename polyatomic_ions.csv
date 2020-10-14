@@ -1,0 +1,34 @@
+Polyatomic_Ion,Chemical_Symbol,Oxidation_Number
+ammonium,NH4,1+
+acetate,C2H3O2,1-
+bicarbonate,HCO3,1-
+bisulfate,HSO4,1-
+bisulfite,HSO3,1-
+bromate,BrO3,1-
+Bromite,BrO2,1-
+carbonate,CO3,2-
+chlorate,ClO3,1-
+chlorite,ClO2,1-
+chromate,CrO4,2-
+cyanide,CN,1-
+dichromate,Cr2O7,2-
+ferrocyanide,Fe(CN)6,4-
+ferricyanide,Fe(CN)6,3-
+hydroxide,OH,1-
+hypobromite,BrO,1-
+hypochlorite,ClO,1-
+hypoiodate,IO,1-
+iodate,IO3,1-
+Iodite,IO2,1-
+nitrate,NO3,1-
+nitrite,NO2,1-
+oxalate,C2O4,2-
+perbromate,HBrO3,1-
+perchlorate,ClO4,1-
+permanganate,MnO4,1-
+phosphate,PO4,3-
+sulfate,SO4,2-
+sulfite,SO3,2-
+thiosulfite,S2O3,2-
+hydrogen phosphate,HPO4,2-
+dihydrogen phosphate,H2PO4,1-
