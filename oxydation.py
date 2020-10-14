@@ -94,8 +94,6 @@ def IonicBonds(equation, charge): #seperates regular ones ionic equations
                 elif PeriodicTable[atoms] <=6 and PeriodicTable[atoms] >= 3:
                     negativecharge = (8-int(PeriodicTable[atoms]))
                     positivecharge = -1*(0 - negativecharge - int(str(charge)[::-1]))
-                    #return (equation.replace(atoms,"")+"^"+str(positivecharge)+"+"+"   " + str(atoms)+str(times)+"^"+str(negativecharge)+"-")
-                    #equation = equation.replace(atoms,"")
                     
                      
     
