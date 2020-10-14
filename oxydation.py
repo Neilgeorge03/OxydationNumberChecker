@@ -48,13 +48,23 @@ def ChargeChecker(equation1, charge1):
     for ncharge in range(1,10):
         if str(ncharge)+"+" in equation1:
             charge = str(ncharge)+"+"
-            charge1 = str(int(charge[::-1]) + int(charge1[::-1]))[::-1]+"+"
+            charge1 = int(charge[::-1]) + int(charge1[::-1])
             equation1 = equation1.replace(charge, "")
+            if int(charge1)>0:
+                charge1 = str(charge1)+"+"
+            elif int(charge1)<0:
+                charge1 = str(charge1)[::-1]
         elif str(ncharge)+"-" in equation1:
             charge = str(ncharge)+"-"
-            charge1 = str(int(charge[::-1]) + int(charge1[::-1]))[::-1]
+            charge1 = int(charge[::-1]) + int(charge1[::-1])
             equation1 = equation1.replace(charge, "")
+            
+            if int(charge1)>0:
+                charge1 = str(charge1)+"+"
+            elif int(charge1)<0:
+                charge1 = str(charge1)[::-1]
     if str(IonicBonds(equation1, charge1)) == "None":
+        print(charge1)
         return equation1+"^"+charge1
     else:
         return IonicBonds(equation1, charge1) 
@@ -94,6 +104,8 @@ def IonicBonds(equation, charge): #seperates regular ones ionic equations
                 elif PeriodicTable[atoms] <=6 and PeriodicTable[atoms] >= 3:
                     negativecharge = (8-int(PeriodicTable[atoms]))
                     positivecharge = -1*(0 - negativecharge - int(str(charge)[::-1]))
+                    #return (equation.replace(atoms,"")+"^"+str(positivecharge)+"+"+"   " + str(atoms)+str(times)+"^"+str(negativecharge)+"-")
+                    #equation = equation.replace(atoms,"")
                     
                      
     
