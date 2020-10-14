@@ -2,13 +2,13 @@ import pandas as pd
 import re
 import tkinter as tk
 
-main = pd.read_csv(r'/home/neil/Documents/Programing/polyatomic_ions.csv') #convert csv containing polyatomic ions into dictionary
+main = pd.read_csv('polyatomic_ions.csv') #convert csv containing polyatomic ions into dictionary
 polyatomic = pd.DataFrame(main, columns=["Chemical_Symbol","Oxidation_Number"])
 symbol = polyatomic.Chemical_Symbol.to_list()
 oxydation = polyatomic.Oxidation_Number.to_list()
 Dictionary = dict(zip(symbol,oxydation))
 
-main = pd.read_csv(r'/home/neil/Documents/Programing/Periodic Table.csv') #convert csv file with periodic table into a dictionary 
+main = pd.read_csv('Periodic Table.csv') #convert csv file with periodic table into a dictionary 
 periodic = pd.DataFrame(main, columns=["Symbol","NumberofValence"])
 symbol1 = periodic.Symbol.to_list()
 valence = periodic.NumberofValence.to_list()
@@ -64,7 +64,6 @@ def ChargeChecker(equation1, charge1):
             elif int(charge1)<0:
                 charge1 = str(charge1)[::-1]
     if str(IonicBonds(equation1, charge1)) == "None":
-        print(charge1)
         return equation1+"^"+charge1
     else:
         return IonicBonds(equation1, charge1) 
@@ -104,8 +103,6 @@ def IonicBonds(equation, charge): #seperates regular ones ionic equations
                 elif PeriodicTable[atoms] <=6 and PeriodicTable[atoms] >= 3:
                     negativecharge = (8-int(PeriodicTable[atoms]))
                     positivecharge = -1*(0 - negativecharge - int(str(charge)[::-1]))
-                    #return (equation.replace(atoms,"")+"^"+str(positivecharge)+"+"+"   " + str(atoms)+str(times)+"^"+str(negativecharge)+"-")
-                    #equation = equation.replace(atoms,"")
                     
                      
     
